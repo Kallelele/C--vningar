@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void shiftR(char *str) {
+	char *p = str;
+	int i;
+	int len = 0;
+	char tmp,temp;
+	while (*str != '\0') {
+		str++;
+		len++;
+	}
+	
+	for (i = 0; i <= len; i++) {
+		tmp = *str;
+		p = str + i;
+		temp = *p;
+		*p = tmp;
+	}
+	*str = *p;
+
+}
+
+
+
+int main() {
+	char str[] = "Karl";
+	shiftR(&str);
+	printf("%c", str);
+	return 0;
+}
